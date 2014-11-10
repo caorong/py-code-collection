@@ -131,6 +131,7 @@ def crawler_douban_list():
     # r = requests.get(add1, headers=headers, timeout=5, proxies=proxiess)
     while True:
         add1 = DB_XSZ_URL + "?start=" + str(start)
+        print add1
         r = requests.get(add1, headers=headers, timeout=5)
         start += 25
         print r.encoding
@@ -178,8 +179,8 @@ def download_file(url, dirname = 'temp'):
 
 def start():
     CheckValidProxyThread(None)
-    time.sleep(10000)
-    # crawler_douban_list()
+    time.sleep(10)
+    crawler_douban_list()
     
 def teststr():
     str1 = 'http://qqq/123123.jpg'
