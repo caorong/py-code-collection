@@ -3,6 +3,7 @@
 from parser import BaseParser
 from lxml import etree
 from io import StringIO, BytesIO
+import time
 
 # http://www.kuaidaili.com/free/inha/1/ 
 KUAI_URL = 'http://www.kuaidaili.com/free/inha/'
@@ -10,8 +11,9 @@ KUAI_URL = 'http://www.kuaidaili.com/free/inha/'
 class KuaidlParser(BaseParser):
 
     def parse(self):
-        for i in [ x+1 for x in xrange(1)]:
+        for i in [ x+1 for x in xrange(10)]:
             self.parseInternal(i)
+            time.sleep(2)
 
     def parseInternal(self, no):
         r = super(KuaidlParser, self).fetch(KUAI_URL + str(no))

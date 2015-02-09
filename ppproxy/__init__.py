@@ -37,6 +37,10 @@ class GetProxyProxy:
 def getProxy():
     return GetProxyProxy()
 
+def showAllCheckedProxy():
+    return checkedIpQueue
+    
+
 def getCheckedIp():
     """
     A method will return a anonymous checkedIp and it will return 
